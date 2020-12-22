@@ -8,13 +8,13 @@ namespace RemindMe.Reminder {
     internal class DancePartnerReminder : GeneralReminder {
 
         [JsonIgnore]
-        public override string Name => "Dance Partner Reminder";
+        public override string Name => "舞伴";
 
         [JsonIgnore]
-        public override string Description => "Reminds you to select a dance partner.";
+        public override string Description => "提醒你选择舞伴。";
 
         public override string GetText(DalamudPluginInterface pluginInterface, RemindMe plugin, MonitorDisplay display) {
-            return "Dance Partner";
+            return "舞伴未选定";
         }
 
         public override bool ShouldShow(DalamudPluginInterface pluginInterface, RemindMe plugin, MonitorDisplay display) {

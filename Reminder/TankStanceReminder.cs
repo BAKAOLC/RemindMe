@@ -21,17 +21,17 @@ namespace RemindMe.Reminder {
         };
 
         [JsonIgnore]
-        public override string Name => "Tank Stance Reminder";
+        public override string Name => "盾姿";
 
         [JsonIgnore]
-        public override string Description => "Reminds you to apply tank stance if there are no other tanks in the area with it.";
+        public override string Description => "当场地内没有其他坦克职业开启盾姿时\n提醒你开启盾姿。";
 
         public override string GetText(DalamudPluginInterface pluginInterface, RemindMe plugin, MonitorDisplay display) {
             try {
                 var action = pluginInterface.Data.Excel.GetSheet<Action>().GetRow(TankStanceActions[pluginInterface.ClientState.LocalPlayer.ClassJob.Id]);
-                return $"Tank Stance: {action.Name}";
+                return $"盾姿未开启: {action.Name}";
             } catch {
-                return "Tank Stance";
+                return "盾姿未开启";
             }
         }
 

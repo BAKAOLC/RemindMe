@@ -143,7 +143,7 @@ namespace RemindMe {
 
         public void SetupCommands() {
             PluginInterface.CommandManager.AddHandler("/remindme", new Dalamud.Game.Command.CommandInfo(OnConfigCommandHandler) {
-                HelpMessage = $"Open config window for {this.Name}",
+                HelpMessage = $"打开 {this.Name} 的配置菜单",
                 ShowInHelp = true
             });
         }
@@ -359,11 +359,11 @@ namespace RemindMe {
 
                 ImGui.PushStyleColor(ImGuiCol.TitleBg, 0x880000AA);
                 ImGui.PushStyleColor(ImGuiCol.TitleBgActive, 0x880000FF);
-                ImGui.Begin($"{Name} - Config Load Error", ImGuiWindowFlags.NoResize | ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.AlwaysAutoResize);
+                ImGui.Begin($"{Name} - 配置加载错误", ImGuiWindowFlags.NoResize | ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.AlwaysAutoResize);
                 ImGui.PopStyleColor(2);
-                ImGui.Text($"{Name} failed to load the config file.");
-                ImGui.Text($"Continuing will result in a loss of any configs you have setup for {Name}.");
-                ImGui.Text("Please report this error.");
+                ImGui.Text($"{Name} 在加载配置时失败了。");
+                ImGui.Text($"继续操作可能会丢失部分关于 {Name} 插件的配置。");
+                ImGui.Text("请报告该错误。");
 
                 if (configLoadException != null) {
                     var str = configLoadException.ToString();
@@ -371,7 +371,7 @@ namespace RemindMe {
                 }
 
                 ImGui.Dummy(new Vector2(5));
-                if (ImGui.Button("Retry Load")) {
+                if (ImGui.Button("重新加载")) {
                     PluginConfig = null;
                     configLoadException = null;
                     LoadConfig();
@@ -382,7 +382,7 @@ namespace RemindMe {
                 ImGui.PushStyleColor(ImGuiCol.Button, 0x880000FF);
                 ImGui.PushStyleColor(ImGuiCol.ButtonActive, 0x88000088);
                 ImGui.PushStyleColor(ImGuiCol.ButtonHovered, 0x880000AA);
-                if (ImGui.Button("Clear Config")) {
+                if (ImGui.Button("清除配置")) {
                     LoadConfig(true);
                     configLoadException = null;
                 }

@@ -9,7 +9,7 @@ namespace RemindMe {
             for (var i = 1; i <= MonitorDisplays.Count; i++) {
                 ImGui.SetColumnWidth(i, 100);
             }
-            ImGui.Text("Reminder");
+            ImGui.Text("提醒");
             ImGui.NextColumn();
             foreach (var m in MonitorDisplays.Values) {
                 ImGui.Text(m.Name);

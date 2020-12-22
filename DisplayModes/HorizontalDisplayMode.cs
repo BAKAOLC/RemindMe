@@ -83,7 +83,7 @@ namespace RemindMe {
                     if (display.ReverseCountdownSide) {
                         ImGui.SetCursorPosX(ImGui.GetStyle().WindowPadding.X + display.RowSize / 2f - countdownSize.X / 2);
                     } else {
-                        ImGui.SetCursorPosX(ImGui.GetWindowWidth() - ImGui.GetStyle().WindowPadding.X - display.RowSize / 2f - countdownSize.X / 2);
+                        ImGui.SetCursorPosX(ImGui.GetWindowWidth() - ImGui.GetStyle().WindowPadding.X - display.RowSize / 2f - countdownSize.X * 0.6f);
                     }
 
                     if (display.ShowActionIcon && display.ReverseSideIcon != display.ReverseCountdownSide) {

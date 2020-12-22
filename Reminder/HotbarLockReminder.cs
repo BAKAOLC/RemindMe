@@ -9,13 +9,13 @@ namespace RemindMe.Reminder {
     internal class HotbarLockReminder : GeneralReminder {
 
         [JsonIgnore]
-        public override string Name => "Hotbar Lock Reminder";
+        public override string Name => "热键栏锁";
 
         [JsonIgnore]
-        public override string Description => "Reminds you to lock your hotbar.\n(Cross Hotbar not included)";
+        public override string Description => "提醒你锁定热键栏。\n(不包含十字热键栏)";
 
         public override string GetText(DalamudPluginInterface pluginInterface, RemindMe plugin, MonitorDisplay display) {
-            return "Lock Hotbar";
+            return "热键栏未锁定";
         }
 
         public override bool ShouldShow(DalamudPluginInterface pluginInterface, RemindMe plugin, MonitorDisplay display) {

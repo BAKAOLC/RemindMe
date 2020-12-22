@@ -70,9 +70,9 @@ namespace RemindMe
             if (!ImGui.Begin($"{plugin.Name} - Configuration###cooldownMonitorSetup", ref drawConfig)) return drawConfig;
             if (InstallNoticeDismissed != 1) {
                 
-                ImGui.TextWrapped($"Thank you for installing {plugin.Name}.\nI am currently working on completely rewriting the plugin but please don't hesitate to bring up any issues you have with the current version. Things seem to be relatively stable, but some things may still pop up.");
+                ImGui.TextWrapped($"感谢您安装 {plugin.Name}.\n我正在重写插件，如果有任何问题，请立即向我反馈。插件目前相对稳定，但仍然有可能出现突发的错误。");
                 
-                if (ImGui.SmallButton("Dismiss")) {
+                if (ImGui.SmallButton("消除")) {
                     InstallNoticeDismissed = 1;
                     Save();
                 }
@@ -81,28 +81,28 @@ namespace RemindMe
 
             ImGui.BeginTabBar("###remindMeConfigTabs");
 
-            if (ImGui.BeginTabItem("Displays")) {
+            if (ImGui.BeginTabItem("显示区")) {
                 DrawDisplaysTab();
                 ImGui.EndTabItem();
             }
 
             if (MonitorDisplays.Count > 0) {
-                if (ImGui.BeginTabItem("Actions")) {
+                if (ImGui.BeginTabItem("技能")) {
                     DrawActionsTab();
                     ImGui.EndTabItem();
                 }
 
-                if (ImGui.BeginTabItem("Status Effects")) {
+                if (ImGui.BeginTabItem("状态效果")) {
                     DrawStatusEffectsTab();
                     ImGui.EndTabItem();
                 }
 
-                if (ImGui.BeginTabItem("Raid Effects")) {
+                if (ImGui.BeginTabItem("战斗效果")) {
                     DrawRaidEffectsTab();
                     ImGui.EndTabItem();
                 }
 
-                if (ImGui.BeginTabItem("Reminders")) {
+                if (ImGui.BeginTabItem("提醒")) {
                     DrawRemindersTab();
                     ImGui.EndTabItem();
                 }
@@ -163,10 +163,10 @@ namespace RemindMe
             }
 
             if (selfOnly) {
-                var selfTextSize = ImGui.CalcTextSize("[SELF]");
+                var selfTextSize = ImGui.CalcTextSize("[自身效果]");
                 ImGui.SameLine();
                 ImGui.SetCursorPosX(ImGui.GetColumnWidth() - selfTextSize.X);
-                ImGui.TextDisabled("[SELF]");
+                ImGui.TextDisabled("[自身效果]");
             }
 
 

@@ -25,30 +25,30 @@
         <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
         <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     </PropertyGroup>
-	<ItemGroup>
-		<Reference Include="Dalamud">
-			<HintPath>$(APPDATA)\XIVLauncher\addon\Hooks\Dalamud.dll</HintPath>
-		</Reference>
-		<Reference Include="ImGui.NET">
-			<HintPath>$(APPDATA)\XIVLauncher\addon\Hooks\ImGui.NET.dll</HintPath>
-		</Reference>
-		<Reference Include="ImGuiScene">
-			<HintPath>$(APPDATA)\XIVLauncher\addon\Hooks\ImGuiScene.dll</HintPath>
-		</Reference>
-		<Reference Include="Newtonsoft.Json">
-			<HintPath>$(APPDATA)\XIVLauncher\addon\Hooks\Newtonsoft.Json.dll</HintPath>
-		</Reference>
-		<Reference Include="JetBrains.Annotations">
-			<HintPath>$(APPDATA)\XIVLauncher\addon\Hooks\JetBrains.Annotations.dll</HintPath>
-		</Reference>
-		<Reference Include="Lumina">
-			<HintPath>$(APPDATA)\XIVLauncher\addon\Hooks\Lumina.dll</HintPath>
-		</Reference>
-		<Reference Include="Lumina.Excel">
-			<HintPath>$(APPDATA)\XIVLauncher\addon\Hooks\Lumina.Excel.dll</HintPath>
-		</Reference>
-    </ItemGroup>
     <Target Name="PostBuild" AfterTargets="PostBuildEvent">
       <Exec Command="cd $(ProjectDir)$(OutDir)&#xD;&#xA;for %25%25i in (*.*) do if not &quot;%25%25i&quot;==&quot;$(TargetName).dll&quot; if not &quot;%25%25i&quot;==&quot;$(TargetName).pdb&quot; del /q &quot;%25%25i&quot;&#xD;&#xA;if $(ConfigurationName) == Release (&#xD;&#xA;  powershell New-Item -ItemType Directory -Force -Path '$(ProjectDir)Publish'&#xD;&#xA;  powershell Compress-Archive -Path '$(TargetPath)','$(ProjectDir)$(ProjectName).json','$(ProjectDir)$(OutDir)$(TargetName).pdb' -DestinationPath '$(ProjectDir)Publish\latest.zip' -Force&#xD;&#xA;  echo F|xcopy &quot;$(ProjectDir)$(ProjectName).json&quot; &quot;$(ProjectDir)Publish\$(ProjectName).json&quot; /Y /F&#xD;&#xA;)" />
     </Target>
+    <ItemGroup>
+      <Reference Include="Dalamud">
+        <HintPath>D:\Program Files (x86)\SNDA\FFXIV\Dalamud\Dalamud.dll</HintPath>
+      </Reference>
+      <Reference Include="ImGui.NET">
+        <HintPath>D:\Program Files (x86)\SNDA\FFXIV\Dalamud\ImGui.NET.dll</HintPath>
+      </Reference>
+      <Reference Include="ImGuiScene">
+        <HintPath>D:\Program Files (x86)\SNDA\FFXIV\Dalamud\ImGuiScene.dll</HintPath>
+      </Reference>
+      <Reference Include="JetBrains.Annotations">
+        <HintPath>D:\Program Files (x86)\SNDA\FFXIV\Dalamud\JetBrains.Annotations.dll</HintPath>
+      </Reference>
+      <Reference Include="Lumina">
+        <HintPath>D:\Program Files (x86)\SNDA\FFXIV\Dalamud\Lumina.dll</HintPath>
+      </Reference>
+      <Reference Include="Lumina.Excel">
+        <HintPath>D:\Program Files (x86)\SNDA\FFXIV\Dalamud\Lumina.Excel.dll</HintPath>
+      </Reference>
+      <Reference Include="Newtonsoft.Json">
+        <HintPath>D:\Program Files (x86)\SNDA\FFXIV\Dalamud\Newtonsoft.Json.dll</HintPath>
+      </Reference>
+    </ItemGroup>
 </Project>

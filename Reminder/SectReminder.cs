@@ -8,13 +8,13 @@ namespace RemindMe.Reminder {
     internal class SectReminder : GeneralReminder {
 
         [JsonIgnore]
-        public override string Name => "Sect Reminder";
+        public override string Name => "学派";
 
         [JsonIgnore]
-        public override string Description => "Reminds you to apply a Sect when playing astrologian.";
+        public override string Description => "当你使用占星术士的时候\n提醒你启用学派。";
 
         public override string GetText(DalamudPluginInterface pluginInterface, RemindMe plugin, MonitorDisplay display) {
-            return "Apply Sect";
+            return "学派未启用";
         }
 
         public override bool ShouldShow(DalamudPluginInterface pluginInterface, RemindMe plugin, MonitorDisplay display) {

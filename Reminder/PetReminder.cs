@@ -18,13 +18,13 @@ namespace RemindMe.Reminder {
         };
 
         [JsonIgnore]
-        public override string Name => "Pet Reminder";
+        public override string Name => "召唤物";
 
         [JsonIgnore]
-        public override string Description => "Reminds you to summon your pet.";
+        public override string Description => "提醒你召唤召唤物。";
 
         public override string GetText(DalamudPluginInterface pluginInterface, RemindMe plugin, MonitorDisplay display) {
-            return "Summon Pet";
+            return "未召唤召唤物";
         }
 
         public override bool ShouldShow(DalamudPluginInterface pluginInterface, RemindMe plugin, MonitorDisplay display) {

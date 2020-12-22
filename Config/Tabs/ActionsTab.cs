@@ -16,10 +16,10 @@ namespace RemindMe {
                     ImGui.SetColumnWidth(i, 100);
                 }
 
-                ImGui.Text("Action");
+                ImGui.Text("技能");
                 ImGui.SameLine(80);
 
-                ImGui.Text("Show GCD");
+                ImGui.Text("GCD技能");
                 ImGui.SameLine();
                 ImGui.SetWindowFontScale(0.7f);
                 ImGui.Checkbox("###showGCDCheckbox", ref showGlobalCooldowns);
@@ -91,10 +91,10 @@ namespace RemindMe {
 
                 ImGui.Columns(1);
 
-                ImGui.TextWrapped("\nSomething Missing?\nPlease let Caraxi know on the goat place discord so it can be fixed.");
+                ImGui.TextWrapped("\n有东西缺失了？\n请到 goat place discord 向 Caraxi 反馈，之后它便会被添加。");
 
             } else {
-                ImGui.Text("No display setup.");
+                ImGui.Text("没有显示区域可供设置。");
             }
 
             ImGui.EndChild();
